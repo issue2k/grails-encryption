@@ -1,6 +1,7 @@
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
+grails.project.plugin.includeSource = false
 
 //grails.project.fork = [
 //        // configure settings for compilation JVM, note that if you alter the Groovy version forked compilation is required
@@ -48,14 +49,6 @@ grails.project.dependency.resolution = {
         compile ':hibernate4:4.3.5.2'
 
         build(':release:3.0.1', ':rest-client-builder:2.0.1') {
-            export = false
-        }
-    }
-
-    plugins {
-        runtime ":hibernate4:4.3.5.3" // or ":hibernate:3.6.10.15"
-        build(":release:3.0.1",
-                ":rest-client-builder:1.0.3") {
             export = false
         }
     }
