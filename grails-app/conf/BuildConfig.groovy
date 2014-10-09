@@ -16,6 +16,10 @@ grails.project.test.reports.dir = "target/test-reports"
 //        console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
 //]
 
+// Set up credentials in ~/.grails/settings.groovy
+grails.project.repos.eevolPublic.url = "http://maven.eevol.lu/nexus/content/repositories/eevol-grails-public/"
+grails.project.repos.default = "eevolPublic"
+
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -47,7 +51,7 @@ grails.project.dependency.resolution = {
         build ':tomcat:7.0.52.1'
         compile ':hibernate4:4.3.5.2'
 
-        build(':release:3.0.1', ':rest-client-builder:2.0.1') {
+        compile(':release:3.0.1', ':rest-client-builder:2.0.1') {
             export = false
         }
     }
