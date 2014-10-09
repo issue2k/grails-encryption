@@ -1,6 +1,6 @@
 class CryptoGrailsPlugin {
     // the plugin version
-    def version = "2.1"
+    def version = "2.1.2"
     def dependsOn = [:]
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.4 > *"

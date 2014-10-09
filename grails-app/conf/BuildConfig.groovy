@@ -38,18 +38,17 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
-        build('org.bouncycastle:bcpg-jdk15on:1.47') {
+        compile('org.bouncycastle:bcpg-jdk15on:1.47') {
             excludes 'bcprov-jdk15on'
-            export = true
         }
-        build('org.bouncycastle:bcprov-ext-jdk15on:1.47') {
-            export = true
-        }
+        compile('org.bouncycastle:bcprov-ext-jdk15on:1.47')
 
     }
     plugins {
-        build ':tomcat:7.0.52.1'
-        compile ':hibernate4:4.3.5.2'
+        build (':tomcat:7.0.52.1')
+        compile(':hibernate4:4.3.5.2') {
+            export = false
+        }
 
         compile(':release:3.0.1', ':rest-client-builder:2.0.1') {
             export = false
